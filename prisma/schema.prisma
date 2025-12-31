@@ -1,0 +1,134 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ========================================
+// ENUMS
+// ========================================
+
+enum Role {
+  USER // Message from the user
+  ASSISTANT // Message from the AI assistant
+}
+
+enum SessionCategory {
+  SPRINT_PLANNING // Sprint planning sessions
+  USER_STORIES // User story creation
+  RETROSPECTIVE // Sprint retrospectives
+  DAILY_STANDUP // Daily standup help
+  GENERAL // General Agile coaching
+}
+
+// ========================================
+// MODELS
+// ========================================
+
+// User model - Stores user accounts
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  image         String?
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relationships
+  sessions Session[]
+  folders  SessionFolder[]
+
+  @@map("users")
+}
+
+// Session model - Stores chat sessions/conversations
+model Session {
+  id         String          @id @default(cuid())
+  title      String          @default("New Session")
+  category   SessionCategory @default(GENERAL)
+  isPinned   Boolean         @default(false)
+  isArchived Boolean         @default(false)
+
+  // User relationship (optional - allows anonymous sessions)
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Folder relationship (optional - sessions can be organized in folders)
+  folderId String?
+  folder   SessionFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+
+  // Messages in this session
+  messages Message[]
+
+  // Metadata for performance
+  messageCount  Int       @default(0)
+  lastMessageAt DateTime?
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([folderId])
+  @@index([isPinned])
+  @@index([createdAt])
+  @@index([category])
+  @@map("sessions")
+}
+
+// SessionFolder model - Organizes sessions into folders
+model SessionFolder {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  color       String? @default("#3B82F6") // Hex color for UI customization
+
+  // User relationship (required - folders belong to users)
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Sessions in this folder
+  sessions Session[]
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("session_folders")
+}
+
+// Message model - Stores individual chat messages
+model Message {
+  id      String @id @default(cuid())
+  role    Role // USER or ASSISTANT
+  content String @db.Text
+
+  // Session relationship (required - messages belong to sessions)
+  sessionId String
+  session   Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  // Optional metadata (JSON field for flexible data storage)
+  // Can store: { model: "gemini-pro", tokens: 150, temperature: 0.7, etc. }
+  metadata Json?
+
+  // Track if message was edited
+  isEdited Boolean @default(false)
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sessionId])
+  @@index([createdAt])
+  @@map("messages")
+}
