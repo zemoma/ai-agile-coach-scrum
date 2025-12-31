@@ -45,7 +45,7 @@ export function ChatInput({ onSend, disabled = false, placeholder = "Ask your Ag
   return (
     <div className="sticky bottom-0 bg-white dark:bg-[#050505] pt-4 pb-6 px-6 border-t border-gray-100 dark:border-gray-800">
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-        <div className="relative flex items-center gap-2 bg-white dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-gray-800 transition-all">
+        <div className="relative flex items-center gap-2 bg-white dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-gray-800 focus-within:border-[#0070B8] transition-all">
           <textarea
             ref={textareaRef}
             value={message}
@@ -54,7 +54,7 @@ export function ChatInput({ onSend, disabled = false, placeholder = "Ask your Ag
             placeholder={placeholder}
             disabled={disabled}
             rows={1}
-            className="flex-1 px-5 py-4 bg-transparent border-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 resize-none focus:outline-none focus:ring-0 disabled:opacity-50"
+            className="flex-1 px-5 py-4 bg-transparent border-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 resize-none focus:outline-none disabled:opacity-50"
             style={{ maxHeight: "150px" }}
           />
 

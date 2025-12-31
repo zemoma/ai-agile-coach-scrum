@@ -36,7 +36,7 @@ export function MessageBubble({ message, onEdit, onResend }: MessageBubbleProps)
   const isUser = message.role === "user"
 
   return (
-    <div className={`flex gap-4 justify-start mb-8 group`}>
+    <div className={`flex gap-4 justify-start mb-8 group w-full`}>
       <div className="shrink-0 pt-1">
         <div
           className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm bg-[#0070B8] dark:bg-[#0091E0]`}
@@ -45,10 +45,10 @@ export function MessageBubble({ message, onEdit, onResend }: MessageBubbleProps)
         </div>
       </div>
 
-      <div className="flex flex-col items-start flex-1 max-w-4xl">
+      <div className="flex flex-col items-start flex-1 min-w-0 max-w-full">
         {/* Role Label */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-[15px] font-bold text-gray-900 dark:text-gray-100">
+        <div className="flex items-center gap-2 mb-2 w-full overflow-hidden">
+          <span className="text-[15px] font-bold text-gray-900 dark:text-gray-100 truncate">
             {isUser ? "You" : "AgileMentor AI"}
           </span>
           {!isUser && (
@@ -84,8 +84,8 @@ export function MessageBubble({ message, onEdit, onResend }: MessageBubbleProps)
             </div>
           </div>
         ) : (
-          <div className="w-full">
-            <p className="text-[15px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
+          <div className="w-full wrap-break-word">
+            <p className="text-[15px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-wrap overflow-wrap-anywhere">
               {message.content}
             </p>
           </div>
