@@ -150,7 +150,7 @@ export function MessageBubble({
 
         {/* Actions */}
         {!isEditing && (
-          <div className="flex gap-4 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="flex gap-4 mt-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
             <button
               onClick={handleCopy}
               className="flex items-center gap-1.5 px-3 py-1.5 bg-[#008A9E] hover:bg-[#007687] text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
