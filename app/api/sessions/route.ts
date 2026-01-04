@@ -8,7 +8,17 @@ import {
   deleteSession,
   searchSessions,
 } from "@/lib/db-operation";
-import { SessionCategory } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
+
+type SessionCategory = "SPRINT_PLANNING" | "USER_STORIES" | "RETROSPECTIVE" | "DAILY_STANDUP" | "GENERAL";
+
+const SessionCategoryEnum = {
+  SPRINT_PLANNING: "SPRINT_PLANNING",
+  USER_STORIES: "USER_STORIES",
+  RETROSPECTIVE: "RETROSPECTIVE",
+  DAILY_STANDUP: "DAILY_STANDUP",
+  GENERAL: "GENERAL",
+} as const;
 
 /**
  * GET: Fetch all sessions for a user
@@ -86,9 +96,9 @@ export async function POST(request: NextRequest) {
     const { title, category } = body;
 
     // Validate category if provided (only validate if it's a string)
-    if (category && typeof category === 'string' && !Object.values(SessionCategory).includes(category as SessionCategory)) {
+    if (category && typeof category === 'string' && !Object.values(SessionCategoryEnum).includes(category as any)) {
       return NextResponse.json(
-        { error: `Invalid session category: ${category}. Valid values are: ${Object.values(SessionCategory).join(', ')}` },
+        { error: `Invalid session category: ${category}. Valid values are: ${Object.values(SessionCategoryEnum).join(', ')}` },
         { status: 400 }
       );
     }
@@ -96,7 +106,7 @@ export async function POST(request: NextRequest) {
     const session = await createSession({
       userId: user.id,
       title,
-      category: category as SessionCategory,
+      category: category as any,
     });
 
     return NextResponse.json(
@@ -145,7 +155,7 @@ export async function PATCH(request: NextRequest) {
 
     const updatedSession = await updateSession(sessionId, {
       title,
-      category: category as SessionCategory,
+      category: category as any,
       isPinned,
       isArchived,
       folderId,
