@@ -202,3 +202,16 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+/* Clerk component centering */
+.cl-rootBox,
+.cl-card {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cl-internal-b3fm6y {
+  width: 100%;
+  max-width: 100%;
+}

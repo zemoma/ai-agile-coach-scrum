@@ -28,7 +28,7 @@ export default function Home() {
       <div className="flex flex-col space-y-4 min-h-screen items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 dark:from-zinc-950 dark:to-zinc-900">
         <div className="text-center">
           <div className="inline-block w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-6" />
-          <h1 className="text-3xl font-bold text-zinc-800 dark:text-zinc-200">
+          <h1 className="text-3xl max-md:text-lg font-bold text-zinc-800 dark:text-zinc-200">
             Taking you to your workspace...
           </h1>
         </div>

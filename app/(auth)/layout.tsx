@@ -30,8 +30,8 @@ export default function AuthLayout({
         </div>
 
         {/* Auth Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          {children}
+        <div>
+          <div className="flex items-center justify-center">{children}</div>
         </div>
 
         {/* Footer */}
