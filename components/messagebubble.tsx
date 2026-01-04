@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Copy, Edit2, RotateCcw, Check } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { Message } from "@/types";
 
 interface MessageBubbleProps {
@@ -89,9 +91,60 @@ export function MessageBubble({
           </div>
         ) : (
           <div className="w-full wrap-break-word">
-            <p className={`text-[15px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-wrap overflow-wrap-anywhere ${isUser ? "font-medium" : "font-normal italic"}`}>
-              {message.content}
-            </p>
+            {isUser ? (
+              <p className="text-[15px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-wrap overflow-wrap-anywhere font-medium">
+                {message.content}
+              </p>
+            ) : (
+              <div className="text-[15px] leading-relaxed text-gray-800 dark:text-gray-200 prose prose-sm dark:prose-invert max-w-none">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    p: ({ children }) => (
+                      <p className="mb-4 last:mb-0">{children}</p>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className="font-bold text-gray-900 dark:text-gray-100">
+                        {children}
+                      </strong>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="list-disc list-inside mb-4 space-y-1">
+                        {children}
+                      </ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="list-decimal list-inside mb-4 space-y-1">
+                        {children}
+                      </ol>
+                    ),
+                    li: ({ children }) => <li className="ml-2">{children}</li>,
+                    code: ({ children, className }) => {
+                      const isInline = !className;
+                      return isInline ? (
+                        <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-blue-600 dark:text-blue-400">
+                          {children}
+                        </code>
+                      ) : (
+                        <code className={className}>{children}</code>
+                      );
+                    },
+                    pre: ({ children }) => (
+                      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4">
+                        {children}
+                      </pre>
+                    ),
+                    blockquote: ({ children }) => (
+                      <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4">
+                        {children}
+                      </blockquote>
+                    ),
+                  }}
+                >
+                  {message.content}
+                </ReactMarkdown>
+              </div>
+            )}
           </div>
         )}
 

@@ -34,14 +34,14 @@ export function Header({
         {/* Actions */}
         <div className="flex items-center gap-1">
           <button
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors max-md:hidden"
             aria-label="View grid"
           >
             <Grid3x3 className="w-5 h-5 text-gray-500 dark:text-gray-400" />
           </button>
 
           <button
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors max-md:hidden"
             aria-label="Notifications"
           >
             <Bell className="w-5 h-5 text-gray-500 dark:text-gray-400" />

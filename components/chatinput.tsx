@@ -71,10 +71,10 @@ export function ChatInput({ onSend, disabled = false, placeholder = "Ask your Ag
             )}
           </button>
         </div>
-
-        <div className="mt-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-gray-400 dark:text-gray-500">
+            {/* Additional info */}
+        <div className="mt-3 max-sm:mt-0 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-gray-400 dark:text-gray-500">
           {/* Left side - Keyboard shortcuts */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 max-sm:hidden">
             <kbd className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] font-mono border border-gray-300 dark:border-gray-700">
               Enter
             </kbd>
@@ -87,7 +87,7 @@ export function ChatInput({ onSend, disabled = false, placeholder = "Ask your Ag
           </div>
 
           {/* Right side - Attribution and copyright */}
-          <div className="flex items-center gap-3 text-center sm:text-right">
+          <div className="flex items-center gap-3 text-center sm:text-right max-sm:hidden">
             <span className="flex items-center gap-1">
               Powered by{" "}
               <span className="font-semibold text-blue-600 dark:text-blue-400">
